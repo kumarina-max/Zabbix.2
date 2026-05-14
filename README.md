@@ -36,4 +36,50 @@ exit 0
 ```
 
 ## Задание 7
+
+### Python-скрипт (/usr/local/bin/custom_script.py)
+
+```python
+#!/usr/bin/env python3
+import sys
+import os
+import re
+import datetime
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: script.py <command> [argument]")
+        return
+    
+    command = sys.argv[1]
+    
+    if command == "1":
+        print("Кукушкина Марина Юрьевна")
+    
+    elif command == "2":
+        now = datetime.datetime.now()
+        print(now.strftime("%Y-%m-%d %H:%M:%S"))
+    
+    elif command == "-ping":
+        if len(sys.argv) < 3:
+            print("Error: need IP address or hostname")
+            return
+        result = os.popen("ping -c 1 " + sys.argv[2]).read()
+        result_list = re.findall(r"time=(.*) ms", result)
+        if result_list:
+            print(result_list[0])
+        else:
+            print("0")
+    
+    elif command == "-simple_print":
+        if len(sys.argv) < 3:
+            print("Error: need text to print")
+            return
+        print(sys.argv[2])
+    
+    else:
+        print(f"unknown input: {command}")
+
+if __name__ == "__main__":
+    main()
 ## Задание 8
