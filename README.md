@@ -36,7 +36,7 @@ exit 0
 
 ## Задание 7
 
-### Python-скрипт (/usr/local/bin/custom_script.py)
+### Python-скрипт 
 
 ```python
 #!/usr/bin/env python3
