@@ -84,3 +84,10 @@ if __name__ == "__main__":
 ```
 
 ## Задание 8
+
+## Задание 9*
+
+### Файлы в репозитории
+
+- [Vagrantfile](Vagrantfile) — основной файл конфигурации Vagrant
+- [scripts/zabbix-agent.sh](scripts/zabbix-agent.sh) — скрипт для установки и настройки Zabbix Agent
